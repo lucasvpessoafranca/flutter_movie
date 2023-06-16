@@ -18,7 +18,7 @@ class UserList extends StatelessWidget {
           IconButton(
               onPressed: () {
                 createAlertDialog(context,
-                    """ Lucas França:\n Patricia Nobre \n  Marcos Vinicius """);
+                    """ Lucas França\n Patricia Nobre \n  Marcos Vinicius \n Endryws Iago Oliveira Cunha """);
               },
               icon: Icon(Icons.accessibility_new_sharp))
         ],

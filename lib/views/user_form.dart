@@ -30,6 +30,9 @@ class _UserFormState extends State<UserForm> {
       _formData['avatarUrl'] = user.avatarUrl;
       _formData['description'] = user.description;
       _formData['genero'] = user.genero;
+      _formData['ano'] = user.ano;
+      _formData['faixaEtaria'] = user.faixaEtaria;
+      _formData['nota'] = user.nota;
     }
   }
 
@@ -64,6 +67,9 @@ class _UserFormState extends State<UserForm> {
                   genero: _formData['genero'] ?? "",
                   duration: _formData['duration'] ?? "",
                   description: _formData['description'] ?? "",
+                  nota: _formData['nota'] ?? "",
+                  faixaEtaria: _formData['faixaEtaria'] ?? "",
+                  ano: _formData['ano'] ?? "",
                 ),
               );
               Navigator.of(context).pop();
@@ -107,10 +113,21 @@ class _UserFormState extends State<UserForm> {
               onSaved: (value) => _formData['duration'] = value!,
             ),
             TextFormField(
+              initialValue: _formData['nota'],
               decoration: InputDecoration(labelText: "Nota"),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return "Preencha o campo corretamente.";
+                }
+
+                return null;
+              },
+              onSaved: (value) => _formData['nota'] = value!,
             ),
             TextFormField(
               decoration: InputDecoration(labelText: "Ano"),
+              initialValue: _formData['ano'],
+              onSaved: (value) => _formData['ano'] = value,
             ),
             TextFormField(
               decoration: InputDecoration(labelText: "Descrição"),

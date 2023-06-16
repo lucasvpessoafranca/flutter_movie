@@ -66,6 +66,16 @@ class UserTile extends StatelessWidget {
                         );
                       },
                     ),
+                    ListTile(
+                      leading: Icon(Icons.edit),
+                      title: Text('Exibir Dados'),
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                          AppRoutes.USER_FORM,
+                          arguments: user,
+                        );
+                      },
+                    ),
                   ],
                 );
               },

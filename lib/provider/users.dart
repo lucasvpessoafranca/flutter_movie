@@ -29,13 +29,15 @@ class Users with ChangeNotifier {
       _items.update(
         user.id,
         (value) => User(
-          id: user.id,
-          duration: user.duration,
-          title: user.title,
-          avatarUrl: user.avatarUrl,
-          description: user.description,
-          genero: user.genero,
-        ),
+            id: user.id,
+            duration: user.duration,
+            title: user.title,
+            avatarUrl: user.avatarUrl,
+            description: user.description,
+            genero: user.genero,
+            ano: user.ano,
+            faixaEtaria: user.faixaEtaria,
+            nota: user.nota),
       );
     } else {
       final id = Random().nextDouble().toString();
@@ -47,7 +49,10 @@ class Users with ChangeNotifier {
             title: user.title,
             avatarUrl: user.avatarUrl,
             description: user.description,
-            genero: user.genero),
+            genero: user.genero,
+            faixaEtaria: user.faixaEtaria,
+            ano: user.ano,
+            nota: user.nota),
       );
     }
     notifyListeners();
