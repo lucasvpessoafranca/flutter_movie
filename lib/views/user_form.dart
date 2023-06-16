@@ -33,6 +33,7 @@ class _UserFormState extends State<UserForm> {
       _formData['ano'] = user.ano;
       _formData['faixaEtaria'] = user.faixaEtaria;
       _formData['nota'] = user.nota;
+      _formData['duration'] = user.duration;
     }
   }
 
@@ -106,9 +107,11 @@ class _UserFormState extends State<UserForm> {
               onSaved: (value) => _formData['genero'] = value!,
             ),
             TextFormField(
+              initialValue: _formData['faixaEtaria'],
               decoration: InputDecoration(labelText: "Faixa etária"),
             ),
             TextFormField(
+              initialValue: _formData['duration'],
               decoration: InputDecoration(labelText: "Duração"),
               onSaved: (value) => _formData['duration'] = value!,
             ),
